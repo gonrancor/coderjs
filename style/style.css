@@ -1,0 +1,96 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.row {
+  margin: 0 0;
+}
+nav {
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 0, 0, 0),
+    rgb(252, 85, 85)
+  );
+}
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  margin: 0 15px;
+  padding: 0 15px;
+}
+.nav-letra {
+  font-size: 1.5em;
+  margin: -5px 15px;
+  padding: -5px 15px;
+}
+.logo {
+  height: 70px;
+  margin-left: 10px;
+}
+
+.titulo {
+  color: white;
+  font-size: 4em;
+  text-shadow: 1px 1px 2px black, 0 0 25px rgb(0, 0, 0), 0 0 5px black;
+  text-align: center;
+  margin: 15px auto;
+}
+
+.subtitulo {
+  font-size: 2em;
+  text-align: center;
+  padding: 15px 0;
+  margin: 0 15px;
+}
+.txt {
+  padding: 15px 15px;
+  margin: 0 15px;
+  text-align: center;
+  font-size: 1.5em;
+}
+.pie {
+  background-image: linear-gradient(
+    to left,
+    rgba(255, 0, 0, 0),
+    rgb(252, 85, 85)
+  );
+  text-align: center;
+  padding: 10px 0;
+}
+footer a {
+  text-decoration: none;
+}
+footer a .fa-brands {
+  text-decoration: none;
+}
+.red-social {
+  font-size: 2em;
+  margin: 0 15px;
+}
+.pie-txt {
+  font-size: 1.6em;
+}
+.titular {
+  text-align: center;
+  margin: 15px 0;
+}
+.titular-txt {
+  text-align: center;
+}
+.btn {
+  margin: 0 40%;
+}
+.card-img-top {
+  max-height: 30vh;
+  max-width: auto;
+}
+.card-body {
+  text-align: center;
+}
+.precio {
+  font-weight: 700;
+  font-size: 1.5em;
+}
