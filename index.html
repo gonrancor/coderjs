@@ -67,71 +67,25 @@
           </div>
         </div>
       </nav>
+      <div id="nuevoNav"></div>
     </header>
     <main>
       <h1 class="titular">Nuestros Productos</h1>
-      <div class="contenido">
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-          <div class="col">
-            <div class="card h-100">
-              <img src="./img/rosario.jpg" class="card-img-top" alt="..." />
-              <div class="card-body">
-                <h5 class="card-title">Japa Mala Onix</h5>
-                <p class="card-text">Piedra: Onix negro.</p>
-                <p class="precio">$10.000</p>
-                <button id="btnOnix" type="button" class="btn btn-primary">
-                  Comprar
-                </button>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100">
-              <img src="./img/pulceras.jpg" class="card-img-top" alt="..." />
-              <div class="card-body">
-                <h5 class="card-title">Pulceras de Japa Mala</h5>
-                <p class="card-text">Material: madera</p>
-                <p class="precio">$2.000</p>
-                <button id="btnPulcera" type="button" class="btn btn-primary">
-                  Comprar
-                </button>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100">
-              <img src="./img/JAPA-MALA.jpg" class="card-img-top" alt="..." />
-              <div class="card-body">
-                <h5 class="card-title">Japa Mala</h5>
-                <p class="card-text">Material: Madera.</p>
-                <p class="precio">$5.000</p>
-                <button id="btnMadera" type="button" class="btn btn-primary">
-                  Comprar
-                </button>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100">
-              <img
-                src="./img/collar-piedras-naturales.jpg"
-                class="card-img-top"
-                alt="..."
-              />
-              <div class="card-body">
-                <h5 class="card-title">Japa Mala Corazon</h5>
-                <p class="card-text">
-                  Material: Piedras Rodonita, Rodocrosita, Jaspes varios.
-                </p>
-                <p class="precio">$10.000</p>
-                <button id="btnCorazon" type="button" class="btn btn-primary">
-                  Comprar
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <div class="contenido"></div>
+      <ul class="nav nav-tabs justify-content-center">
+        <li id="collares" class="nav-item">
+          <a class="nav-link" aria-current="page" href="#">Japa Malas</a>
+        </li>
+        <li id="pulceras" class="nav-item">
+          <a class="nav-link" href="#">Pulceras</a>
+        </li>
+        <li id="sahumerios" class="nav-item">
+          <a class="nav-link" href="#">Sahumerios</a>
+        </li>
+      </ul>
+      <div id="cards-collares-container"></div>
+      <div id="cards-pulceras-container"></div>
+      <div id="cards-sahumerios-container"></div>
     </main>
     <footer class="pie">
       <p class="pie-txt">Seguinos en las redes</p>
