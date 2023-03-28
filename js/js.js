@@ -1,31 +1,3 @@
-let contraseña = "matecito";
-let usuario = "Gon";
-
-function login(intentos) {
-  let ingresar = false;
-
-  for (let i = intentos; i >= 0; i--) {
-    let userPass = prompt("Ingresá tu contraseña.");
-    if (userPass === contraseña) {
-      ingresar = true;
-      break;
-    } else {
-      alert("Contraseña invalida.");
-    }
-  }
-  return ingresar;
-}
-if (login(2)) {
-  const div = document.createElement("div");
-  div.textContent = "Bienvenido Gon";
-  nuevoNav.appendChild(div);
-  div.style.textAlign = "right";
-  div.style.paddingRight = "10px";
-  div.style.backgroundColor = "#E6D5CF";
-} else {
-  alert("Supero el numero de intentos permitidos. Intente en un rato.");
-}
-
 const collares = [
   {
     id: 1,
@@ -55,17 +27,33 @@ const collares = [
 const pulcera = [
   {
     id: 1,
-    nombre: "Pulceras Japa Mala de Madera",
+    nombre: "Pulceras Japa Mala con Ojo de Tigre",
     material: "madera",
-    imagen: "./img/pulceras.jpg",
+    imagen: "./img/pulcera1.jpg",
     precio: 2000,
   },
   {
     id: 2,
-    nombre: "Pulceras Japa Mala de Piedra",
+    nombre: "Pulceras Japa Mala con Cuarzo Verde",
     material: "piedra",
-    imagen: "./img/pulceras.jpg",
+    imagen: "./img/pulcera2.jpg",
     precio: 3000,
+  },
+];
+const sahumerios = [
+  {
+    id: 1,
+    nombre: "Sahumerios",
+    material: "Palo santo",
+    imagen: "./img/sahumerio.jpg",
+    precio: 500,
+  },
+  {
+    id: 2,
+    nombre: "Sahumerios artesanales",
+    material: "Palo santo",
+    imagen: "./img/sahumerio1.jpg",
+    precio: 300,
   },
 ];
 
@@ -73,14 +61,12 @@ const carrito = [];
 // // // // // // // // // COLLAR// // // // // // // // // COLLAR
 let collar = document.getElementById("collares");
 collar.addEventListener("click", function cantidad() {
-  document.getElementById("cards-collares-container").style.display =
-    "inline-block";
   document.getElementById("cards-pulceras-container").style.display = "none";
-  let respuesta = prompt(
-    "Tenemos 3 tipos de Japa Malas a disposición: Onix, de madera o corazon. ¿Cual desea?"
-  );
-  alert(`Japa mala de   ${respuesta}  se ha agregado al carrito de compras. `);
-  carrito.push("Japa Mala de " + respuesta);
+  document.getElementById("cards-sahumerios-container").style.display = "none";
+  document.getElementById("cards-collares-container").style.display = "flex";
+  document.getElementById("cards-collares-container").style.flexWrap = "wrap";
+  document.getElementById("cards-collares-container").style.justifyContent =
+    "center";
 });
 
 // // // // // // // // // PULCERAS// // // // // // // // // PULCERAS
@@ -132,15 +118,11 @@ for (let i = 0; i < collares.length; i++) {
 let pulceras = document.getElementById("pulceras");
 pulceras.addEventListener("click", function cantidad() {
   document.getElementById("cards-collares-container").style.display = "none";
-  document.getElementById("cards-pulceras-container").style.display =
-    "inline-block";
-  let respuesta = prompt(
-    "Tenemos 2 tipos de pulceras de Japa Malas a disposición: de madera o de piedras. ¿Cual desea?"
-  );
-  alert(
-    `Pulcera Japa mala de   ${respuesta}  se ha agregado al carrito de compras. `
-  );
-  carrito.push("Pulcera Japa Mala de " + respuesta);
+  document.getElementById("cards-sahumerios-container").style.display = "none";
+  document.getElementById("cards-pulceras-container").style.display = "flex";
+  document.getElementById("cards-pulceras-container").style.flexWrap = "wrap";
+  document.getElementById("cards-pulceras-container").style.justifyContent =
+    "center";
 });
 
 console.log(carrito);
@@ -184,108 +166,206 @@ for (let i = 0; i < pulcera.length; i++) {
   cardsContainerpulceras.appendChild(card);
 }
 
-/*
---- EL HTML QUE ANTES MOSTRABA FIJO Y AHORA SOLO QUIERO MOSTRAR DESDE JS ----
+// // // // // // // // SAHUMERIOS// // // // // // // //
 
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-        
-          <div class="col">
-            <div class="card h-100">
-              <img src="./img/rosario.jpg" class="card-img-top" alt="..." />
-              <div class="card-body">
-                <h5 class="card-title">Japa Mala Onix</h5>
-                <p class="card-text">Piedra: Onix negro.</p>
-                <p class="precio">$10.000</p>
-                <button id="btnOnix" type="button" class="btn btn-primary">
-                  Comprar
-                </button>
-              </div>
-            </div>
-          </div>
+const cardsConteinerSahumerios = document.getElementById(
+  "cards-sahumerios-container"
+);
 
-          <div class="col">
-            <div class="card h-100">
-              <img src="./img/pulceras.jpg" class="card-img-top" alt="..." />
-              <div class="card-body">
-                <h5 class="card-title">Pulceras de Japa Mala</h5>
-                <p class="card-text">Material: madera</p>
-                <p class="precio">$2.000</p>
-                <button id="btnPulcera" type="button" class="btn btn-primary">
-                  Comprar
-                </button>
-              </div>
-            </div>
-          </div>
+const sahumerio = document.getElementById("sahumerios");
 
-          <div class="col">
-            <div class="card h-100">
-              <img src="./img/JAPA-MALA.jpg" class="card-img-top" alt="..." />
-              <div class="card-body">
-                <h5 class="card-title">Japa Mala</h5>
-                <p class="card-text">Material: Madera.</p>
-                <p class="precio">$5.000</p>
-                <button id="btnMadera" type="button" class="btn btn-primary">
-                  Comprar
-                </button>
-              </div>
-            </div>
-          </div>
+sahumerio.addEventListener("click", function cantidad() {
+  document.getElementById("cards-collares-container").style.display = "none";
+  document.getElementById("cards-pulceras-container").style.display = "none";
+  document.getElementById("cards-sahumerios-container").style.display = "flex";
+  document.getElementById("cards-sahumerios-container").style.flexWrap = "wrap";
+  document.getElementById("cards-sahumerios-container").style.justifyContent =
+    "center";
+});
 
-          <div class="col">
-            <div class="card h-100">
-              <img
-                src="./img/collar-piedras-naturales.jpg"
-                class="card-img-top"
-                alt="..."
-              />
-              <div class="card-body">
-                <h5 class="card-title">Japa Mala Corazon</h5>
-                <p class="card-text">
-                  Material: Piedras Rodonita, Rodocrosita, Jaspes varios.
-                </p>
-                <p class="precio">$10.000</p>
-                <button id="btnCorazon" type="button" class="btn btn-primary">
-                  Comprar
-                </button>
-              </div>
-            </div>
-          </div>
+for (let i = 0; i < sahumerios.length; i++) {
+  const card = document.createElement("div");
+  card.classList.add("card");
 
-        </div>
-*/
-/*
+  const imagen = document.createElement("img");
+  imagen.src = sahumerios[i].imagen;
+  imagen.alt = sahumerios[i].nombre;
+  imagen.classList.add("card-image");
 
---------- BOTONES CON ALERTAS SOBRE LAS CARDS QUE ESTABAN SOBRE HTML ----------
-  let onixNegro = document.getElementById("btnOnix");
-  btnOnix.addEventListener("click", function cantidad() {
-    var respuesta = parseInt(
-      prompt("Ingrese la cantidad de unidades que desea comprar")
-    );
-    alert(
-      respuesta +
-        " Japa Mala de Onix negro se ha agregado al carrito de compras"
-    );
+  const nombre = document.createElement("h3");
+  nombre.textContent = sahumerios[i].nombre;
+  nombre.classList.add("card-titulo");
+
+  const precio = document.createElement("p");
+  precio.textContent = "$" + sahumerios[i].precio.toFixed(2);
+  precio.classList.add("card-precio");
+
+  const descripcion = document.createElement("p");
+  descripcion.textContent = sahumerios[i].descripcion;
+  descripcion.classList.add("card-descripcion");
+
+  const btn = document.createElement("button");
+  btn.textContent = "Comprar";
+  btn.classList.add("card-btn");
+
+  card.appendChild(imagen);
+  card.appendChild(nombre);
+  card.appendChild(precio);
+  card.appendChild(descripcion);
+  card.appendChild(btn);
+
+  cardsConteinerSahumerios.appendChild(card);
+}
+
+//// LOGIN //// LOGIN //// LOGIN //// LOGIN //// LOGIN //// LOGIN //// LOGIN ////
+
+// const usuarioRegistrado = "gon@gon.com";
+// const contraseñaUsuario = "matecito";
+
+// // let btnLogin = document.getElementById("btnLogin");
+// let btnVaciarTodo = document.getElementById("btnVaciarLocalStorage");
+// let btnVaciarSessionStorage = document.getElementById(
+//   "btnVaciarSessionStorage"
+// );
+// let recordar = document.getElementById("rememberMe");
+
+// function guardarDatos(storage) {
+//   let user = document.getElementById("emailAddress").value;
+//   let pass = document.getElementById("password").value;
+
+//   const usuario = {
+//     user: user,
+//     pass: pass,
+//   };
+//   storage.setItem("user", JSON.stringify(usuario));
+// }
+// function borrarDatos(storage) {
+//   storage.clear();
+// }
+// function borrarDatoUnico(key, storage) {
+//   storage.removeItem(key);
+// }
+// btnVaciarTodo.addEventListener("click", () => {
+//   borrarDatos(localStorage);
+//   borrarDatos(sessionStorage);
+// });
+// btnVaciarSessionStorage.addEventListener("click", () => {
+//   borrarDatos(sessionStorage);
+// });
+// btnLogin.addEventListener("click", () => {
+//   if (recordar.checked) {
+//     guardarDatos(localStorage);
+//   } else {
+//     guardarDatos(sessionStorage);
+//   }
+// });
+
+const mailLogin = document.getElementById("emailLogin"),
+  passLogin = document.getElementById("passwordLogin"),
+  recordar = document.getElementById("recordarme"),
+  btnLogin = document.getElementById("login"),
+  btnLogout = document.getElementById("btnLogout"),
+  modalEl = document.getElementById("modalLogin"),
+  nombreUsuario = document.getElementById("nombreUsuario"),
+  modal = new bootstrap.Modal(modalEl),
+  toggles = document.querySelectorAll(".toggles");
+
+const usuarios = [
+  {
+    nombre: "Luffy",
+    mail: "futuroreypirata@onepiece.com",
+    pass: "carne",
+  },
+  {
+    nombre: "Zoro",
+    mail: "reydelinfierno@santoriu.com",
+    pass: "sake",
+  },
+  {
+    nombre: "Saitama",
+    mail: "calvoconcapa@heroe.com",
+    pass: "rentagratis",
+  },
+];
+
+//La función de validar se aprovecha del tipo de return que hace el método find (el objeto si lo encuentra, o undefined si no encuentra ninguno que cumpla con la condición)
+function validarUsuario(usersDB, user, pass) {
+  let encontrado = usersDB.find((userDB) => userDB.mail == user);
+
+  //console.log('Usuario encontrado por validate '+ typeof isFound);
+  if (typeof encontrado === "undefined") {
+    return false;
+  } else {
+    //si estoy en este punto, quiere decir que el mail existe, sólo queda comparar la contraseña
+    if (encontrado.pass != pass) {
+      return false;
+    } else {
+      return encontrado;
+    }
+  }
+}
+
+//Guardamos los datos que recuperamos de la database en el storage
+function guardarDatos(usuarioDB, storage) {
+  const usuario = {
+    name: usuarioDB.nombre,
+    user: usuarioDB.mail,
+    pass: usuarioDB.pass,
+  };
+
+  storage.setItem("usuario", JSON.stringify(usuario));
+}
+//Recupero los datos que se guardaron y los retorno
+function recuperarUsuario(storage) {
+  let usuarioEnStorage = JSON.parse(storage.getItem("usuario"));
+  return usuarioEnStorage;
+}
+
+function presentarInfo(array, clase) {
+  array.forEach((element) => {
+    element.classList.toggle(clase);
   });
+}
 
-  let btnPulcera = document.getElementById("btnPulcera");
-  btnPulcera.addEventListener("click", function cantidad() {
-    var respuesta = parseInt(prompt("Ingrese cuantas pulceras quiere"));
-    alert(respuesta + " pulcera se ha agregado al carrito de compras");
-  });
+function saludar(usuario) {
+  nombreUsuario.innerHTML = `Bienvenido/a ${usuario.name}`;
+  nombreUsuario.style.justifyContent = "center";
+}
+btnLogin.addEventListener("click", (e) => {
+  e.preventDefault();
+  if (!mailLogin.value || !passLogin.value) {
+    alert("Todos los campos son requeridos");
+  } else {
+    let data = validarUsuario(usuarios, mailLogin.value, passLogin.value);
+    if (!data) {
+      alert(`Usuario y/o contraseña erróneos`);
+    } else {
+      if (recordar.checked) {
+        guardarDatos(data, localStorage);
+        saludar(recuperarUsuario(localStorage));
+      } else {
+        guardarDatos(data, sessionStorage);
+        saludar(recuperarUsuario(sessionStorage));
+      }
+      modal.hide();
+      presentarInfo(toggles, "d-none");
+    }
+  }
+});
+function borrarDatos() {
+  localStorage.clear();
+  sessionStorage.clear();
+}
+btnLogout.addEventListener("click", () => {
+  borrarDatos();
+  presentarInfo(toggles, "d-none");
+});
 
-  let btnMadera = document.getElementById("btnMadera");
-  btnMadera.addEventListener("click", function cantidad() {
-    var respuesta = parseInt(prompt("Ingrese cuantas pulceras quiere"));
-    alert(
-      respuesta + " Japa Mala de madera se ha agregado al carrito de compras"
-    );
-  });
+function estaLogueado(usuario) {
+  if (usuario) {
+    saludar(usuario);
+    presentarInfo(toggles, "d-none");
+  }
+}
 
-  let btnCorazon = document.getElementById("btnCorazon");
-  btnCorazon.addEventListener("click", function cantidad() {
-    var respuesta = parseInt(prompt("Ingrese cuantas pulceras quiere"));
-    alert(
-      respuesta + " Japa Mala corazon se ha agregado al carrito de compras"
-    );
-  });
-  */
+estaLogueado(recuperarUsuario(localStorage));
