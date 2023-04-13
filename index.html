@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="img/loto.png" type="image/x-icon" />
     <title>Yoga dinamico</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -160,6 +161,46 @@
       <div id="cards-pulceras-container"></div>
       <div id="cards-sahumerios-container"></div>
     </main>
+    <nav class="fixed-bottom carrito bg-transparent">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"></a>
+        <button
+          class="navbar-toggler carro-boton"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasNavbar"
+          aria-controls="offcanvasNavbar"
+          aria-label="Toggle navigation"
+        >
+          <img
+            src="./img/carrito.png"
+            class="img-carrito"
+            alt="img de carrito"
+          />
+        </button>
+        <div
+          class="offcanvas offcanvas-end"
+          tabindex="-1"
+          id="offcanvasNavbar"
+          aria-labelledby="offcanvasNavbarLabel"
+        >
+          <div class="offcanvas-header">
+            <h4>Tu carrito</h4>
+            <ul class="offcanvas-header-ul"></ul>
+            <h4 class="total">Total:</h4>
+            <button
+              type="button"
+              class="btn-close btn-close-carro"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+            <button class="btn-comprar" id="btnComprar">Comprar</button>
+            <button class="btn-borrar" id="btnBorrar">Limpiar carrito</button>
+          </div>
+          <div class="offcanvas-body"></div>
+        </div>
+      </div>
+    </nav>
     <footer class="pie">
       <div>
         <a href="https://www.instagram.com/vc.contable/" target="_blank">

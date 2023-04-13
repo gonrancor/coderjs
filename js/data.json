@@ -1,0 +1,60 @@
+{
+  "collares": [
+    {
+      "id": 1,
+      "nombre": "Japa Mala Onix",
+      "material": "onix",
+      "imagen": "./img/rosario.jpg",
+      "precio": 10000,
+      "descripcion": "Japa mala hecho de piedras Onix negro."
+    },
+    {
+      "id": 2,
+      "nombre": "Japa Mala de madera",
+      "material": "madera",
+      "imagen": "./img/JAPA-MALA.jpg",
+      "precio": 5000,
+      "descripcion": "Japa mala hecho de madera pintado a mano."
+    },
+    {
+      "id": 3,
+      "nombre": "Japa Mala corazon",
+      "material": "piedras",
+      "imagen": "./img/collar-piedras-naturales.jpg",
+      "precio": 1000,
+      "descripcion": "Japa mala hecho de piedras naturales."
+    }
+  ],
+  "pulcera": [
+    {
+      "id": 1,
+      "nombre": "Pulceras Japa Mala con Ojo de Tigre",
+      "material": "madera",
+      "imagen": "./img/pulcera1.jpg",
+      "precio": 2000
+    },
+    {
+      "id": 2,
+      "nombre": "Pulceras Japa Mala con Cuarzo Verde",
+      "material": "piedra",
+      "imagen": "./img/pulcera2.jpg",
+      "precio": 3000
+    }
+  ],
+  "sahumerios": [
+    {
+      "id": 1,
+      "nombre": "Sahumerios",
+      "material": "Palo santo",
+      "imagen": "./img/sahumerio.jpg",
+      "precio": 500
+    },
+    {
+      "id": 2,
+      "nombre": "Sahumerios artesanales",
+      "material": "Palo santo",
+      "imagen": "./img/sahumerio1.jpg",
+      "precio": 300
+    }
+  ]
+}

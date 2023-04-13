@@ -8,13 +8,14 @@
 }
 .navbar {
   padding: 0;
-}
-nav {
   background-image: linear-gradient(
     to right,
     rgba(255, 0, 0, 0),
     rgb(252, 85, 85)
   );
+}
+.bg-nav {
+  background-image: transparent;
 }
 .nav-link {
   text-align: right;
@@ -76,7 +77,62 @@ nav {
   margin-top: 5px;
   margin-bottom: 5px;
 }
-
+.offcanvas-header {
+  display: flex;
+  flex-direction: column;
+}
+.offcanvas-header-ul {
+  display: flex;
+  flex-direction: column;
+}
+.offcanvas-header-ul li {
+  line-height: 3rem;
+}
+.offcanvas-header-ul div {
+  display: flex;
+  gap: 10px;
+}
+.carrito {
+  margin-bottom: 54px;
+  height: 65px;
+}
+.img-carrito {
+  height: 60px;
+}
+.btn-close-carro {
+  position: absolute;
+  bottom: 10%;
+  font-size: 1.5rem;
+  margin: auto;
+}
+.bg-transparent {
+  background-color: transparent;
+}
+.carro-boton {
+  position: absolute;
+  bottom: 90;
+  right: 0;
+  margin-right: 20px;
+  opacity: 0.5;
+  transition: 0.1s;
+}
+.carro-boton:hover {
+  opacity: 1;
+}
+.btn-comprar {
+  margin: 20px auto;
+  font-size: 1.5rem;
+  background-color: rgba(35, 212, 35, 0.8);
+  padding: 5px;
+  border-radius: 5%;
+}
+.btn-borrar {
+  margin: 20px auto;
+  font-size: 1rem;
+  background-color: rgba(212, 35, 35, 0.5);
+  padding: 5px;
+  border-radius: 5%;
+}
 .pie {
   background-image: linear-gradient(
     to left,
